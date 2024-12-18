@@ -164,6 +164,5 @@ private boolean hasElevator;
     public static void main(String[] args) {
         Library Nielson = new Library("Nielson", "Neilson Drive", 4, true);
         Nielson.enter();
-
     }
   }
