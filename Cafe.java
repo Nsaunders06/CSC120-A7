@@ -24,7 +24,32 @@ public class Cafe extends Building { // Extends the Building class
             this.nCups = nCups; 
             System.out.println("You have built a cafe: ☕");
         }
-        
+    /**
+     * overloaded method with just name and address 
+     * @param name
+     * @param address
+     */   
+        public Cafe (String name, String address){
+            super (name, address); 
+            System.out.println("You have built a cafe: ☕");
+        }
+    /**
+     * Overloaded method that just takes in restock information and name and address
+     * @param name
+     * @param address
+     * @param nCoffeeOunces
+     * @param nSugarPackets
+     * @param nCreams
+     * @param nCups
+     */
+        public Cafe (String name, String address, int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups){
+            super (name, address); 
+            this.nCoffeeOunces = nCoffeeOunces; 
+            this.nSugarPackets = nSugarPackets; 
+            this.nCreams = nCreams; 
+            this.nCups = nCups; 
+            System.out.println("You have built a cafe: ☕");
+        }
     /**
      * Allows cafe to restock 
      * @param nCoffeeOunces

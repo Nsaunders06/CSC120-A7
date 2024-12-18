@@ -6,18 +6,41 @@ public class Library extends Building { // Extends the Building class
 
 //Attributes 
 private Hashtable<String, Boolean> collection; 
+private boolean hasElevator;
+
 /**
  * Constructor for Library 
  * @param name
  * @param address
  * @param nFloors
+ * @param hasElevator 
  * @param collection
  */
 
-    public Library (String name, String address, int nFloors, Hashtable<String, Boolean > collection) {
+    public Library (String name, String address, int nFloors, boolean hasElevator) {
         super(name, address, nFloors);
+        this.hasElevator = hasElevator; 
         collection = new Hashtable<>(); 
         System.out.println("You have built a library: 📖");
+    }
+
+
+/**
+ * Overloaded constructor with just name and address 
+ * @param name
+ * @param address
+ */
+    public Library (String name, String address){
+        super (name, address); 
+    }
+/**
+ * Overloaded constructor with only name, address and the number of floors 
+ * @param name
+ * @param address
+ * @param nFloors
+ */
+    public Library (String name, String address, int nFloors){
+        super(name, address, nFloors);
     }
 
 //Methods 
@@ -107,18 +130,39 @@ private Hashtable<String, Boolean> collection;
             System.out.println("+ containsTitle ()");
             System.out.println("+ isAvailable ()");
         }
-        
+
 /**
  * Makes it so you can only move the correct number of levels, dependent on elevator status 
  */
-        public void goToFloor (int floorNum){
-        super.goToFloor(floorNum);
-        System.out.println("you are on floor " + this.activeFloor);
+        /**
+ * Makes it so you can only move the correct number of levels, dependent on elevator status 
+ */
+
+    public void goToFloor (int floorNum){
+        if (this.hasElevator ==false){ 
+          throw new RuntimeException("You cannot use the goToFloor because there is no elevator. Try goUp or goDown. ");
         }
+       else{
+        super.goToFloor(floorNum);
+       }
+        
+    }
+    /**
+     * Allows users to go up in the house without an elevator 
+     */
+    public void goUp(){
+        this.activeFloor ++; 
+        System.out.println("You are now on floor " + this.activeFloor);
+    }
+
+    public void goDown(){ 
+        this.activeFloor --; 
+        System.out.println("You are now on floor " + this.activeFloor);
+    }
 
     public static void main(String[] args) {
-      Library Nielson = new Library("Nielson", "Neilson Drive", 4, null);
-      
+        Library Nielson = new Library("Nielson", "Neilson Drive", 4, true);
+        Nielson.enter();
+
     }
-  
   }

@@ -29,9 +29,9 @@ public class House extends Building { // Extends the building class
  * @param hasElevator
  */  
     public House (String name, String address, boolean hasElevator){
-        super(name); 
-        this.address = address; 
+        super(name, address); 
         this.hasElevator = hasElevator; 
+        System.out.println("You have built a house: 🏠");
     }
 /**
  * Another overloaded constructor with minimum information 
@@ -40,6 +40,7 @@ public class House extends Building { // Extends the building class
  */
     public House (String name, String adress){
         super (name, adress); 
+        System.out.println("You have built a house: 🏠");
     }
 
 /**
@@ -117,12 +118,12 @@ public class House extends Building { // Extends the building class
      */
     public void goUp(){
         this.activeFloor ++; 
-        System.out.println("You are now on floor " + this.activeFloor);
+        System.out.println("You are now on floor # " + this.activeFloor);
     }
 
     public void goDown(){ 
         this.activeFloor --; 
-        System.out.println("You are now on " + this.activeFloor);
+        System.out.println("You are now on floor # " + this.activeFloor);
     }
 
         public static void main(String[] args) {
