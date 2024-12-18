@@ -114,13 +114,15 @@ public class House extends Building { // Extends the building class
         
     }
     /**
-     * Allows users to go up in the house without an elevator 
+     * Allows for person to go up in the house without an elevator 
      */
     public void goUp(){
         this.activeFloor ++; 
         System.out.println("You are now on floor # " + this.activeFloor);
     }
-
+/**
+ * Allows for person to go up in the house without an elevator 
+ */
     public void goDown(){ 
         this.activeFloor --; 
         System.out.println("You are now on floor # " + this.activeFloor);

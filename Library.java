@@ -32,6 +32,7 @@ private boolean hasElevator;
  */
     public Library (String name, String address){
         super (name, address); 
+        System.out.println("You have built a library: 📖");
     }
 /**
  * Overloaded constructor with only name, address and the number of floors 
@@ -41,6 +42,7 @@ private boolean hasElevator;
  */
     public Library (String name, String address, int nFloors){
         super(name, address, nFloors);
+        System.out.println("You have built a library: 📖");
     }
 
 //Methods 
@@ -134,9 +136,6 @@ private boolean hasElevator;
 /**
  * Makes it so you can only move the correct number of levels, dependent on elevator status 
  */
-        /**
- * Makes it so you can only move the correct number of levels, dependent on elevator status 
- */
 
     public void goToFloor (int floorNum){
         if (this.hasElevator ==false){ 
@@ -148,13 +147,15 @@ private boolean hasElevator;
         
     }
     /**
-     * Allows users to go up in the house without an elevator 
+     * Allows person to go up in the library without an elevator 
      */
     public void goUp(){
         this.activeFloor ++; 
         System.out.println("You are now on floor " + this.activeFloor);
     }
-
+    /**
+     * Allows person to go down in the library without an elevator 
+     */
     public void goDown(){ 
         this.activeFloor --; 
         System.out.println("You are now on floor " + this.activeFloor);
