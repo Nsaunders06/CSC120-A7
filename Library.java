@@ -95,7 +95,9 @@ private Hashtable<String, Boolean> collection;
         System.out.println(collection.entrySet());
         }
 
-     //Overriding
+/**
+ * Makes it so you can only see the options for the library class 
+ */
         public void showOptions() {
             super.showOptions();
             System.out.println("+ addTitle ()");
@@ -105,7 +107,10 @@ private Hashtable<String, Boolean> collection;
             System.out.println("+ containsTitle ()");
             System.out.println("+ isAvailable ()");
         }
-
+        
+/**
+ * Makes it so you can only move the correct number of levels, dependent on elevator status 
+ */
         public void goToFloor (int floorNum){
         super.goToFloor(floorNum);
         System.out.println("you are on floor " + this.activeFloor);

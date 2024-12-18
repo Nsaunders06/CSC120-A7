@@ -57,16 +57,28 @@ public class Cafe extends Building { // Extends the Building class
            
         }
 
- //Overriding
+/**
+ * Makes it so you can only see the options for the house class 
+ */
     public void showOptions() {
         super.showOptions();
         System.out.println("+ sellCoffee ()");
+    }
+
+/**
+ * Makes it so you can only move the correct number of levels, dependent on elevator status 
+ */
+    public void goToFloor (int floorNum){
+        if (floorNum != 1){
+        throw new RuntimeException("You can only be on the first floor of the cafe!"); 
+        }
     }
   
 
     public static void main(String[] args) {
         Cafe CC = new Cafe("CC", "CC", 3, 10, 1, 1, 1);
         CC.restock(100, 100, 100, 100); 
+        CC.goToFloor (3); 
     }
     
 }
